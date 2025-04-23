@@ -1,0 +1,653 @@
+<?xml version="1.0" ?>
+<sdf version="1.10">
+    <world name="f450_world">
+        <physics name="1ms" type="ignored">
+            <max_step_size>0.001</max_step_size>
+            <real_time_factor>1.0</real_time_factor>
+        </physics>
+        <plugin
+            filename="gz-sim-physics-system"
+            name="gz::sim::systems::Physics">
+        </plugin>
+        <plugin
+            filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands">
+        </plugin>
+        <plugin
+            filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster">
+        </plugin>
+
+        <plugin
+            filename="gz-sim-sensors-system"
+            name="gz::sim::systems::Sensors">
+            <render_engine>ogre2</render_engine>
+        </plugin>
+
+        <light type="directional" name="sun">
+            <cast_shadows>true</cast_shadows>
+            <pose>0 0 10 0 0 0</pose>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+            <attenuation>
+                <range>1000</range>
+                <constant>0.9</constant>
+                <linear>0.01</linear>
+                <quadratic>0.001</quadratic>
+            </attenuation>
+            <direction>-0.5 0.1 -0.9</direction>
+        </light>
+
+        <model name="ground_plane">
+            <static>true</static>
+            <link name="link">
+                <collision name="collision">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    </plane>
+                </geometry>
+                </collision>
+                <visual name="visual">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    <size>100 100</size>
+                    </plane>
+                </geometry>
+                <material>
+                    <ambient>0.8 0.8 0.8 1</ambient>
+                    <diffuse>0.8 0.8 0.8 1</diffuse>
+                    <specular>0.8 0.8 0.8 1</specular>
+                </material>
+                </visual>
+            </link>
+        </model>
+
+        <model name='f450'>
+          <link name='base_link'>
+            <inertial>
+              <pose>-0.00054957953450118129 0.0018142856833168099 0.040026850723289917 0 0 0</pose>
+              <mass>1.3744524451885569</mass>
+              <inertia>
+                <ixx>0.017096581891354219</ixx>
+                <ixy>-6.0304315150095918e-06</ixy>
+                <ixz>-3.113686349382469e-05</ixz>
+                <iyy>0.017095091668683969</iyy>
+                <iyz>-1.027870083709718e-05</iyz>
+                <izz>0.033419503946091021</izz>
+              </inertia>
+            </inertial>
+            <collision name='base_link_collision'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/base_link.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__arm_2_collision_1'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_2.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__motor_4_collision_2'>
+              <pose>6.9388939039072284e-18 0 3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_4.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__base_top_v10_1_collision_3'>
+              <pose>-6.9388939039072284e-18 0 -3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/base_top_v10_1.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__arm_3_collision_4'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_3.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__motor_3_collision_5'>
+              <pose>1.387778780781446e-17 0 -3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_3.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__arm_4_collision_6'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_4.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__motor_2_collision_7'>
+              <pose>0 6.9388939039072284e-18 5.2041704279304213e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_2.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__arm_5_collision_8'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_5.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <collision name='base_link_fixed_joint_lump__motor_1_collision_9'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_1.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <visual name='base_link_visual'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/base_link.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__arm_2_visual_1'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_2.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__motor_4_visual_2'>
+              <pose>6.9388939039072284e-18 0 3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_4.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__base_top_v10_1_visual_3'>
+              <pose>-6.9388939039072284e-18 0 -3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/base_top_v10_1.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__arm_3_visual_4'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_3.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__motor_3_visual_5'>
+              <pose>1.387778780781446e-17 0 -3.4694469519536142e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_3.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__arm_4_visual_6'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_4.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__motor_2_visual_7'>
+              <pose>0 6.9388939039072284e-18 5.2041704279304213e-18 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_2.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__arm_5_visual_8'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/arm_5.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+            <visual name='base_link_fixed_joint_lump__motor_1_visual_9'>
+              <pose>0 0 0 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/motor_1.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+          </link>
+          <joint name='rev_4' type='revolute'>
+            <pose relative_to='base_link'>0.22594500000000001 0.00089499999999999996 0.075026999999999996 0 0 0</pose>
+            <parent>base_link</parent>
+            <child>propellor_v4_1</child>
+            <axis>
+              <xyz>0.0020609999999999999 0.00075900000000000002 -0.99999800000000005</xyz>
+              <limit>
+                <lower>-inf</lower>
+                <upper>inf</upper>
+              </limit>
+              <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+              </dynamics>
+            </axis>
+          </joint>
+          <link name='propellor_v4_1'>
+            <pose relative_to='rev_4'>0 0 0 0 0 0</pose>
+            <inertial>
+              <pose>-2.0604968456766629e-05 -1.0296088685228129e-06 0.01018340641224692 0 0 0</pose>
+              <mass>0.048646751013652553</mass>
+              <inertia>
+                <ixx>0.000173</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>1.9999999999999999e-06</iyy>
+                <iyz>0</iyz>
+                <izz>0.000173</izz>
+              </inertia>
+            </inertial>
+            <collision name='propellor_v4_1_collision'>
+              <pose>-0.22594500000000001 -0.00089499999999999996 -0.075026999999999996 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v4_1.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <visual name='propellor_v4_1_visual'>
+              <pose>-0.22594500000000001 -0.00089499999999999996 -0.075026999999999996 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v4_1.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+          </link>
+          <joint name='rev_1' type='revolute'>
+            <pose relative_to='base_link'>-0.22662399999999999 0.0028969999999999998 0.074096000000000009 0 0 0</pose>
+            <parent>base_link</parent>
+            <child>propellor_v7_1</child>
+            <axis>
+              <xyz>0.0020609999999999999 0.00075900000000000002 -0.99999800000000005</xyz>
+              <limit>
+                <lower>-inf</lower>
+                <upper>inf</upper>
+              </limit>
+              <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+              </dynamics>
+            </axis>
+          </joint>
+          <link name='propellor_v7_1'>
+            <pose relative_to='rev_1'>0 0 0 0 0 0</pose>
+            <inertial>
+              <pose>-2.12039339774206e-05 -5.4492414743503156e-06 0.0066597530361613283 0 0 0</pose>
+              <mass>0.045968326244657187</mass>
+              <inertia>
+                <ixx>1.9999999999999999e-06</ixx>
+                <ixy>9.9999999999999995e-07</ixy>
+                <ixz>0</ixz>
+                <iyy>0.000173</iyy>
+                <iyz>0</iyz>
+                <izz>0.000173</izz>
+              </inertia>
+            </inertial>
+            <collision name='propellor_v7_1_collision'>
+              <pose>0.22662399999999999 -0.0028969999999999998 -0.074095999999999995 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v7_1.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <visual name='propellor_v7_1_visual'>
+              <pose>0.22662399999999999 -0.0028969999999999998 -0.074095999999999995 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v7_1.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+          </link>
+          <joint name='rev_3' type='revolute'>
+            <pose relative_to='base_link'>-0.00072200000000000042 -0.224388 0.074388999999999997 0 0 0</pose>
+            <parent>base_link</parent>
+            <child>propellor_v7_2</child>
+            <axis>
+              <xyz>0.0020609999999999999 0.00075900000000000002 -0.99999800000000005</xyz>
+              <limit>
+                <lower>-inf</lower>
+                <upper>inf</upper>
+              </limit>
+              <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+              </dynamics>
+            </axis>
+          </joint>
+          <link name='propellor_v7_2'>
+            <pose relative_to='rev_3'>0 0 0 0 0 0</pose>
+            <inertial>
+              <pose>-1.3434893079237079e-05 -1.2514295851306921e-05 0.0066599982117770407 0 0 0</pose>
+              <mass>0.045968326244657187</mass>
+              <inertia>
+                <ixx>0.000173</ixx>
+                <ixy>-9.9999999999999995e-07</ixy>
+                <ixz>0</ixz>
+                <iyy>1.9999999999999999e-06</iyy>
+                <iyz>0</iyz>
+                <izz>0.000173</izz>
+              </inertia>
+            </inertial>
+            <collision name='propellor_v7_2_collision'>
+              <pose>0.00072199999999999999 0.224388 -0.074388999999999997 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v7_2.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <visual name='propellor_v7_2_visual'>
+              <pose>0.00072199999999999999 0.224388 -0.074388999999999997 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v7_2.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+          </link>
+          <joint name='rev_2' type='revolute'>
+            <pose relative_to='base_link'>-0.0011169999999999999 0.22820599999999999 0.074731999999999993 0 0 0</pose>
+            <parent>base_link</parent>
+            <child>propellor_v4_2</child>
+            <axis>
+              <xyz>0.0020609999999999999 0.00075900000000000002 -0.99999800000000005</xyz>
+              <limit>
+                <lower>-inf</lower>
+                <upper>inf</upper>
+              </limit>
+              <dynamics>
+                <spring_reference>0</spring_reference>
+                <spring_stiffness>0</spring_stiffness>
+              </dynamics>
+            </axis>
+          </joint>
+          <link name='propellor_v4_2'>
+            <pose relative_to='rev_2'>0 0 0 0 0 0</pose>
+            <inertial>
+              <pose>-2.0559666656236359e-05 -8.7759879383031425e-07 0.0101828006910968 0 0 0</pose>
+              <mass>0.048646751013652553</mass>
+              <inertia>
+                <ixx>0.000173</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>1.9999999999999999e-06</iyy>
+                <iyz>0</iyz>
+                <izz>0.000173</izz>
+              </inertia>
+            </inertial>
+            <collision name='propellor_v4_2_collision'>
+              <pose>0.0011169999999999999 -0.22820599999999999 -0.074732000000000007 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v4_2.stl</uri>
+                </mesh>
+              </geometry>
+            </collision>
+            <visual name='propellor_v4_2_visual'>
+              <pose>0.0011169999999999999 -0.22820599999999999 -0.074732000000000007 0 0 0</pose>
+              <geometry>
+                <mesh>
+                  <scale>0.001 0.001 0.001</scale>
+                  <uri>file:///home/dave/ros2_ws/install/f450_description/share/f450_description/meshes/propellor_v4_2.stl</uri>
+                </mesh>
+              </geometry>
+              <material>
+                <diffuse>0.875 0.875 0.875 1</diffuse>
+                <ambient>0.875 0.875 0.875 1</ambient>
+              </material>
+            </visual>
+          </link>
+          <frame name='r_10' attached_to='arm_2'>
+            <pose>0.169817 0.01027 0.035108 0 0 0</pose>
+          </frame>
+          <frame name='motor_4' attached_to='r_10'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_5' attached_to='arm_2'>
+            <pose>0.0053330000000000001 0.010774000000000001 0.039019999999999999 0 0 0</pose>
+          </frame>
+          <frame name='base_top_v10_1' attached_to='r_5'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_1' attached_to='base_link'>
+            <pose>0.056191999999999999 -0.0093509999999999999 0.0089189999999999998 0 0 0</pose>
+          </frame>
+          <frame name='arm_2' attached_to='r_1'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_8' attached_to='arm_3'>
+            <pose>-0.16996 -0.010322 0.034391999999999999 0 0 0</pose>
+          </frame>
+          <frame name='motor_3' attached_to='r_8'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_2' attached_to='base_link'>
+            <pose>-0.056599999999999998 0.013243 0.0087039999999999999 0 0 0</pose>
+          </frame>
+          <frame name='arm_3' attached_to='r_2'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_9' attached_to='arm_4'>
+            <pose>-0.011415 -0.169849 0.034597000000000003 0 0 0</pose>
+          </frame>
+          <frame name='motor_2' attached_to='r_9'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_3' attached_to='base_link'>
+            <pose>0.010756999999999999 -0.054516000000000002 0.0087919999999999995 0 0 0</pose>
+          </frame>
+          <frame name='arm_4' attached_to='r_3'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_11' attached_to='arm_5'>
+            <pose>-0.010366999999999999 0.16986299999999999 0.034858 0 0 0</pose>
+          </frame>
+          <frame name='motor_1' attached_to='r_11'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <frame name='r_4' attached_to='base_link'>
+            <pose>0.0093139999999999994 0.058367000000000002 0.0088739999999999999 0 0 0</pose>
+          </frame>
+          <frame name='arm_5' attached_to='r_4'>
+            <pose>0 0 0 0 0 0</pose>
+          </frame>
+          <!-- rev4 -->
+          <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+            <robotNamespace>f450</robotNamespace>
+            <jointName>rev_4</jointName>
+            <linkName>propellor_v4_1</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>5000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+            <actuator_number>0</actuator_number>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+          </plugin>
+
+          <!-- rev1 -->
+          <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+            <robotNamespace>f450</robotNamespace>
+            <jointName>rev_1</jointName>
+            <linkName>propellor_v7_1</linkName>
+            <turningDirection>ccw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>5000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+            <actuator_number>0</actuator_number>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>motor_speed/1</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+          </plugin>
+
+          <!-- rev2 -->
+          <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+            <robotNamespace>f450</robotNamespace>
+            <jointName>rev_2</jointName>
+            <linkName>propellor_v4_2</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>5000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+            <actuator_number>0</actuator_number>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>motor_speed/2</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+          </plugin>
+          
+          <!-- rev3 -->
+          <plugin name='gz::sim::systems::MulticopterMotorModel' filename='gz-sim-multicopter-motor-model-system'>
+            <robotNamespace>f450</robotNamespace>
+            <jointName>rev_3</jointName>
+            <linkName>propellor_v7_2</linkName>
+            <turningDirection>cw</turningDirection>
+            <timeConstantUp>0.0125</timeConstantUp>
+            <timeConstantDown>0.025</timeConstantDown>
+            <maxRotVelocity>5000.0</maxRotVelocity>
+            <motorConstant>8.54858e-06</motorConstant>
+            <momentConstant>0.016</momentConstant>
+            <commandSubTopic>gazebo/command/motor_speed</commandSubTopic>
+            <actuator_number>0</actuator_number>
+            <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+            <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+            <motorSpeedPubTopic>motor_speed/3</motorSpeedPubTopic>
+            <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+            <motorType>velocity</motorType>
+          </plugin>
+
+        </model>
+
+    
+
+    </world>
+</sdf>
