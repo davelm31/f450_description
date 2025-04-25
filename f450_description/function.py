@@ -92,7 +92,7 @@ def p_torque(Ix, Iy, Iz, pdot, qdot, rdot,p,q,r):
     ux = Ix * pdot + (Iz - Iy) * q * r
     uy = Iy * qdot + (Ix - Iy) * p * r
     uz = Iz * rdot + (Iy - Ix) * p * q
-    return ux
+    return ux, uy, uz
 
 #plnata 2 - derivada de la matriz de rotacion - c
 def p_velocity(R, dot_bc_x, dot_bc_y):

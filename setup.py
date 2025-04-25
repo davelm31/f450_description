@@ -36,7 +36,10 @@ setup(
             'sub_imu = f450_description.sub_imu:main',
             'pubsub = f450_description.pubsub:main',
             'pruebas  = f450_description.pruebas:main',
-            'var_2_vai  = f450_description.var_2_vai:main'
+            'var_2_vai  = f450_description.var_2_vai:main',
+            'prueba_p1  = f450_description.prueba_p1:main',
+            'prueba_p1g  = f450_description.prueba_p1g:main',
+            'prueba_general  = f450_description.prueba_general:main',
         ],
     },
 )
